@@ -17,11 +17,13 @@ while Salir != "no":
         print(f"Heroe numero: {i}. Nombre = {c["nombre"]} | universo = {c["universo"]} | poder = {c["poder"]} | nivel = {c["nivel"]} ")
 
  heroe_seleccionado = int(input("\nQue heroe vas a seleccionar?: "))
- if heroes[heroe_seleccionado-1] in equipo:
-       print("\nYa este heroe esta en tu equipo, selecciona otro:")
+ if heroe_seleccionado > len(heroes):
+    print("Escoge uno de los que sale ahi\n")
  else:
-        equipo.append(heroes[heroe_seleccionado-1])
-        Salir = input("\nQuieres seguir agregando heroes al equipo? si/no: ")
+    equipo.append(heroes[heroe_seleccionado-1])
+    heroes.pop(heroe_seleccionado-1)
+    Salir = input("\nQuieres seguir agregando heroes al equipo? si/no: ")
+
 
 print(f""" 
 ---------------------------------------------------
@@ -40,7 +42,7 @@ for i,c in enumerate(equipo,start=1):
  else:
      cuantos_dc +=1
 
-
+print(heroes)
 print(f""" 
 ---------------------------------------------------
 Poder total de tu equipo = {poder_total}
