@@ -42,7 +42,6 @@ for i,c in enumerate(equipo,start=1):
  else:
      cuantos_dc +=1
 
-print(heroes)
 print(f""" 
 ---------------------------------------------------
 Poder total de tu equipo = {poder_total}
