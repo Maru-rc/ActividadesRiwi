@@ -6,7 +6,7 @@ def guardar_resultados(nombre,puntaje,hora):
         archivo_resultados.writelines([nombre + ",",str(puntaje), ",",hora,"\n"])
 
 
-def pregunta_aleatoria(excluidos,correcta):
+def pregunta_aleatoria(excluidos):
     with open ("data.json","r") as datos:
         preguntas = json.load(datos)
         numero_aleatorio = random.randint(1,len(preguntas))
@@ -29,4 +29,13 @@ def pregunta_aleatoria(excluidos,correcta):
         else:
             print("Respuesta correcta\n")
             correcta = True
-    return correcta
+            return correcta
+        
+def consultar_ranking ():
+    try:
+        with open("Resultados.csv", "r"):
+            resultados = json.load
+            print(resultados)
+    except:
+        print("Aun no hay jugadores en el ranking")
+
